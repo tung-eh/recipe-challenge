@@ -25,16 +25,20 @@ const IngredientGroup = ({ name, items }) => (
   <>
     <h2 className="font-serif text-lg italic">{name}</h2>
     <div className="grid gap-2">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <div className="grid grid-flow-col auto-cols-auto gap-4 justify-start">
           <input
             className="appearance-none border border-gray-400 rounded checked:bg-yellow-500 checked:border-transparent w-5 h-5"
             type="checkbox"
+            id={name + index}
             style={{
               backgroundImage: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
             }}
           />
-          <span dangerouslySetInnerHTML={{ __html: item }} />
+          <label
+            htmlFor={name + index}
+            dangerouslySetInnerHTML={{ __html: item }}
+          />
         </div>
       ))}
     </div>
