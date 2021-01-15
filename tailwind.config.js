@@ -8,12 +8,18 @@ module.exports = {
       gridTemplateRows: {
         layout: 'auto 1fr auto',
       },
+      gridTemplateColumns: {
+        info: 'auto 1fr',
+      },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
         serif: ['"Playfair Display"', 'serif'],
       },
       colors: {
         gray: colors.gray,
+      },
+      fontSize: {
+        xxs: '0.65rem',
       },
     },
   },
