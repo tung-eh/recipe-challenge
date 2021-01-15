@@ -4,6 +4,7 @@ import { ReactComponent as ClockIcon } from './icons/schedule-24px.svg'
 import { ReactComponent as DominoIcon } from './icons/6dots.svg'
 import { ReactComponent as MealIcon } from './icons/restaurant_menu-24px.svg'
 import Ingredients from './Ingredients'
+import Instructions from './Instructions'
 import cakeImg from './images/photo1.png'
 
 const Info = ({ Icon, title, value, color = 'gray-700' }) => (
@@ -39,6 +40,9 @@ function App() {
         <div className="grid gap-9 max-w-xl">
           <h1 className="font-serif font-bold text-2xl">Ingredients</h1>
           <Ingredients />
+          <h1 className="font-serif font-bold text-2xl">Instructions</h1>
+          <Instructions />
+          <div className="italic text-gray-400 mt-10">{`Source: https://sallysbakingaddiction.com/classic-cheesecake/`}</div>
         </div>
         <div className="rounded-xl shadow-md grid gap-10 p-12">
           <Info
