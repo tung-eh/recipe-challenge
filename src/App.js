@@ -1,6 +1,9 @@
+import React from 'react'
+
+import { ReactComponent as ClockIcon } from './icons/schedule-24px.svg'
 import { ReactComponent as DominoIcon } from './icons/6dots.svg'
 import { ReactComponent as MealIcon } from './icons/restaurant_menu-24px.svg'
-import { ReactComponent as ClockIcon } from './icons/schedule-24px.svg'
+import Ingredients from './Ingredients'
 import cakeImg from './images/photo1.png'
 
 const Info = ({ Icon, title, value, color = 'gray-700' }) => (
@@ -21,7 +24,7 @@ function App() {
           Classic Cheesecake Recipe
         </h1>
         <div className="flex text-sm  text-gray-700">
-          <div className="flex items-end  mr-2" style={{ height: '1em' }}>
+          <div className="flex items-end mr-2" style={{ height: '1em' }}>
             <DominoIcon />
           </div>
           <p className="italic max-w-lg">
@@ -32,8 +35,11 @@ function App() {
         </div>
       </div>
       <img className="my-5" src={cakeImg} alt="cake" />
-      <div className="flex justify-between my-5">
-        <div>Ingredients</div>
+      <div className="flex items-start justify-between my-5">
+        <div className="grid gap-9 max-w-xl">
+          <h1 className="font-serif font-bold text-2xl">Ingredients</h1>
+          <Ingredients />
+        </div>
         <div className="rounded-xl shadow-md grid gap-10 p-12">
           <Info
             Icon={MealIcon}
