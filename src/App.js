@@ -7,13 +7,16 @@ import Ingredients from './Ingredients'
 import Instructions from './Instructions'
 import cakeImg from './images/photo1.png'
 
-const Info = ({ Icon, title, value, color = 'gray-700' }) => (
+const Info = ({ Icon, title, value, color = 'gray-700', className }) => (
   <div
-    className={`grid grid-cols-info items-center gap-x-3 gap-y-1 text-${color}`}
+    className={
+      `grid grid-cols-info items-center gap-x-1 md:gap-x-3 text-sm md:text-base text-${color} ` +
+      className
+    }
   >
-    <Icon className="row-span-2 w-9 h-9 " />
-    <div className="uppercase font-bold text-xxs text-gray-400">{title}</div>
-    <div className="text-sm">{value}</div>
+    <Icon className="row-span-2" width="2em" height="2em" />
+    <div className="uppercase font-bold text-xsem text-gray-400">{title}</div>
+    <div className="text-smem">{value}</div>
   </div>
 )
 
@@ -21,7 +24,7 @@ function App() {
   return (
     <div className="grid grid-rows-layout min-h-screen max-w-screen-lg p-6 mx-auto">
       <div className="my-5">
-        <h1 className="font-serif font-bold text-5xl mb-4">
+        <h1 className="font-serif font-bold text-3xl md:text-5xl mb-4">
           Classic Cheesecake Recipe
         </h1>
         <div className="flex text-sm  text-gray-700">
@@ -36,7 +39,7 @@ function App() {
         </div>
       </div>
       <img className="my-5" src={cakeImg} alt="cake" />
-      <div className="flex items-start justify-between my-5">
+      <div className="flex flex-col-reverse md:flex-row items-start justify-between my-5">
         <div className="grid gap-9 max-w-xl">
           <h1 className="font-serif font-bold text-2xl">Ingredients</h1>
           <Ingredients />
@@ -44,12 +47,13 @@ function App() {
           <Instructions />
           <div className="italic text-gray-400 mt-10">{`Source: https://sallysbakingaddiction.com/classic-cheesecake/`}</div>
         </div>
-        <div className="rounded-xl shadow-md grid gap-10 p-12">
+        <div className="grid grid-cols-3 md:grid-cols-1 rounded-xl md:shadow-md grid gap-10 pb-12 md:p-12">
           <Info
             Icon={MealIcon}
             title="Yields"
             value="12 servings"
             color="yellow-500"
+            className="col-span-3 md:col-auto"
           />
           <Info Icon={ClockIcon} title="Prep time" value="45 minutes" />
           <Info Icon={ClockIcon} title="Cook time" value="1 hour" />
